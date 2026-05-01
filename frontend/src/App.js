@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer";
 import { authHelper } from "./services/api";
 
 import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
 import Parts from "./pages/Parts";
 import ShopParts from "./pages/PartsDetails";
 import Educational from "./pages/Educational";
@@ -99,6 +100,7 @@ function App() {
           <main className={mainClassName}>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutUs />} />
               <Route path="/parts" element={<Parts />} />
               <Route path="/shop-parts/:carId" element={<ShopParts />} />
               <Route path="/education" element={<Educational />} />

@@ -87,6 +87,14 @@ const Header = () => {
             Home
           </NavLink>
           <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active" : ""}`
+            }
+          >
+            About
+          </NavLink>
+          <NavLink
             to="/parts"
             className={({ isActive }) =>
               `nav-link ${isActive ? "active" : ""}`
@@ -162,6 +170,13 @@ const Header = () => {
           <div className="mobile-nav-links">
             <NavLink to="/" className="mobile-nav-link" onClick={closeMenu} end>
               Home
+            </NavLink>
+            <NavLink
+              to="/about"
+              className="mobile-nav-link"
+              onClick={closeMenu}
+            >
+              About
             </NavLink>
             <NavLink
               to="/parts"

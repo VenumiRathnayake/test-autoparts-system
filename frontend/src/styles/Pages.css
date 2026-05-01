@@ -736,6 +736,333 @@
   padding: 112px 0 48px;
 }
 
+/*================================================
+    2A. About Page
+=================================================*/
+.about-page {
+  background: #FFFFFF;
+  color: #0F172A;
+}
+
+.about-shell {
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.about-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 150px 0 132px;
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.8)),
+    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80")
+      center/cover;
+}
+
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.12), rgba(15, 23, 42, 0.42));
+}
+
+.about-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  text-align: center;
+}
+
+.about-hero__eyebrow {
+  display: inline-flex;
+  margin-bottom: 16px;
+  color: #F59E0B;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.about-hero h1 {
+  margin: 0 auto 18px;
+  max-width: 760px;
+  color: #FFFFFF;
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  line-height: 1.08;
+}
+
+.about-hero h1 span {
+  color: #F59E0B;
+}
+
+.about-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.about-story,
+.about-offer,
+.about-choose,
+.about-process {
+  padding: 78px 0;
+}
+
+.about-section-heading {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.about-section-heading h2 {
+  margin: 0;
+  color: #0F172A;
+  font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+}
+
+.about-section-heading p {
+  margin: 12px 0 0;
+  color: rgba(15, 23, 42, 0.68);
+  line-height: 1.7;
+}
+
+.about-story__grid,
+.about-offer__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+  align-items: center;
+}
+
+.about-story__image,
+.about-offer__image {
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 22px 46px rgba(15, 23, 42, 0.08);
+}
+
+.about-story__image img,
+.about-offer__image img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+}
+
+.about-story__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-story__copy p {
+  margin: 0;
+  color: rgba(15, 23, 42, 0.76);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.about-dual-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.about-highlight-card {
+  padding: 34px 30px;
+  border-radius: 26px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 20px 44px rgba(15, 23, 42, 0.08);
+  text-align: center;
+  background: linear-gradient(180deg, #151d32, #0F172A);
+  color: #FFFFFF;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.about-highlight-card svg {
+  font-size: 1.55rem;
+  margin-bottom: 18px;
+  color: inherit;
+}
+
+.about-highlight-card h3 {
+  margin: 0 0 14px;
+  font-size: 1.8rem;
+  color: inherit;
+}
+
+.about-highlight-card p {
+  margin: 0;
+  color: inherit;
+  line-height: 1.75;
+  opacity: 0.92;
+}
+
+.about-highlight-card--gold {
+  background: linear-gradient(180deg, #151d32, #0F172A);
+  color: #FFFFFF;
+}
+
+.about-highlight-card--dark {
+  background: linear-gradient(180deg, #151d32, #0F172A);
+  color: #FFFFFF;
+}
+
+.about-highlight-card:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(180deg, #F59E0B, #d98b0d);
+  color: #0F172A;
+  box-shadow: 0 22px 46px rgba(12, 18, 32, 0.12);
+}
+
+.about-offer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-offer__item {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.about-offer__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: #0F172A;
+  color: #F59E0B;
+  font-size: 1.15rem;
+}
+
+.about-offer__item h3,
+.about-choose__item h3,
+.about-process-card h3 {
+  margin: 0 0 8px;
+  color: #0F172A;
+  font-size: 1.2rem;
+}
+
+.about-offer__item p,
+.about-choose__item p,
+.about-process-card p {
+  margin: 0;
+  color: rgba(15, 23, 42, 0.7);
+  line-height: 1.7;
+}
+
+.about-choose__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 28px;
+}
+
+.about-choose__item {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.about-choose__check {
+  color: #F59E0B;
+  font-size: 1.1rem;
+  margin-top: 4px;
+}
+
+.about-process__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.about-process-card {
+  position: relative;
+  overflow: hidden;
+  padding: 30px 26px;
+  border-radius: 26px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #FFFFFF;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.about-process-card:nth-child(2) {
+  background: #0F172A;
+}
+
+.about-process-card:nth-child(2) h3,
+.about-process-card:nth-child(2) p,
+.about-process-card:nth-child(2) .about-process-card__badge {
+  color: #FFFFFF;
+}
+
+.about-process-card:nth-child(2) .about-process-card__icon {
+  background: rgba(245, 158, 11, 0.16);
+}
+
+.about-process-card__badge {
+  display: inline-flex;
+  margin-bottom: 18px;
+  color: rgba(15, 23, 42, 0.42);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.about-process-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  background: rgba(245, 158, 11, 0.12);
+  color: #F59E0B;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 992px) {
+  .about-story__grid,
+  .about-offer__grid,
+  .about-dual-cards,
+  .about-choose__grid,
+  .about-process__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-story__image,
+  .about-offer__image {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-shell {
+    width: min(100% - 32px, 1240px);
+  }
+
+  .about-hero {
+    padding: 124px 0 96px;
+  }
+
+  .about-story,
+  .about-offer,
+  .about-choose,
+  .about-process {
+    padding: 64px 0;
+  }
+}
+
 .edu-title {
   text-align: center;
   font-size: clamp(2rem, 4vw, 3rem);
