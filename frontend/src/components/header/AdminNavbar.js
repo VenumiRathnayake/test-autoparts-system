@@ -53,11 +53,7 @@ const AdminNavbar = () => {
   return (
     <nav className="header-nav admin-nav dashboard-nav">
       <div className="dashboard-nav__mobile-bar">
-        <NavLink to="/admin/add-parts" className="nav-brand" onClick={closeMenu}>
-          <span className="brand-text">
-            {process.env.REACT_APP_BRAND_NAME || "AutoParts"}
-          </span>
-        </NavLink>
+        <span className="dashboard-nav__mobile-title">Admin Dashboard</span>
 
         <button
           className={`mobile-menu-button ${isMenuOpen ? "open" : ""}`}
@@ -72,11 +68,6 @@ const AdminNavbar = () => {
 
       <div className={`dashboard-nav__panel ${isMenuOpen ? "open" : ""}`}>
         <div className="dashboard-nav__brand-block">
-          <NavLink to="/admin/add-parts" className="nav-brand" onClick={closeMenu}>
-            <span className="brand-text">
-              {process.env.REACT_APP_BRAND_NAME || "AutoParts"}
-            </span>
-          </NavLink>
           <span className="dashboard-nav__title">Admin Dashboard</span>
           <button
             className="dashboard-nav__close"

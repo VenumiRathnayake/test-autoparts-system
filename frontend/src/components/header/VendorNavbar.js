@@ -53,11 +53,7 @@ const VendorNavbar = () => {
   return (
     <nav className="header-nav vendor-nav">
       <div className="vendor-nav__mobile-bar">
-        <NavLink to="/vendor/add-parts" className="nav-brand" onClick={closeMenu}>
-          <span className="brand-text">
-            {process.env.REACT_APP_BRAND_NAME || "AutoParts"}
-          </span>
-        </NavLink>
+        <span className="vendor-nav__mobile-title">Vendor Dashboard</span>
 
         <button
           className={`mobile-menu-button ${isMenuOpen ? "open" : ""}`}
@@ -72,11 +68,6 @@ const VendorNavbar = () => {
 
       <div className={`vendor-nav__panel ${isMenuOpen ? "open" : ""}`}>
         <div className="vendor-nav__brand-block">
-          <NavLink to="/vendor/add-parts" className="nav-brand" onClick={closeMenu}>
-            <span className="brand-text">
-              {process.env.REACT_APP_BRAND_NAME || "AutoParts"}
-            </span>
-          </NavLink>
           <span className="vendor-nav__title">Vendor Dashboard</span>
           <button
             className="vendor-nav__close"

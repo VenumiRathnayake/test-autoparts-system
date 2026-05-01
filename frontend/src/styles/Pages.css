@@ -1039,7 +1039,8 @@
 
 .add-part-page .add-part-form input[type="text"],
 .add-part-page .add-part-form input[type="number"],
-.add-part-page .add-part-form input[type="file"] {
+.add-part-page .add-part-form input[type="file"],
+.add-part-page .add-part-form textarea {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid #ccc;
@@ -1048,9 +1049,15 @@
   transition: border-color 0.2s ease;
 }
 
-.add-part-page .add-part-form input:focus {
+.add-part-page .add-part-form input:focus,
+.add-part-page .add-part-form textarea:focus {
   border-color: #007bff;
   outline: none;
+}
+
+.add-part-page .add-part-form textarea {
+  min-height: 120px;
+  resize: vertical;
 }
 
 .add-part-page .add-part-form input[type="file"] {
@@ -2081,6 +2088,7 @@
 .login-page .form-control:focus,
 .register-page .form-control:focus,
 .add-part-page .add-part-form input:focus,
+.add-part-page .add-part-form textarea:focus,
 .add-article-form input:focus,
 .add-article-form textarea:focus,
 .modal-content .form-group input:focus,
@@ -2180,6 +2188,7 @@
 .login-page .form-control:focus,
 .register-page .form-control:focus,
 .add-part-page .add-part-form input:focus,
+.add-part-page .add-part-form textarea:focus,
 .add-article-form input:focus,
 .add-article-form textarea:focus {
   border-color: #F59E0B;
