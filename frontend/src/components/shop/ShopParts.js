@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { BiFilterAlt, BiLeftArrowAlt, BiRightArrowAlt, BiX } from "react-icons/bi";
 import ShopCard from "./ShopCard";
 import "../../styles/Components.css";
 
@@ -247,7 +248,7 @@ const ShopParts = ({ parts: propParts }) => {
              onClick={() => setShowMobileFilters(!showMobileFilters)}
            >
              {showMobileFilters ? "Hide Filters" : "Show Filters"}
-             <i className={`bi bi-${showMobileFilters ? "x" : "filter"}`} />
+             {showMobileFilters ? <BiX /> : <BiFilterAlt />}
            </button>
          </div>
 
@@ -560,7 +561,7 @@ const ShopParts = ({ parts: propParts }) => {
                                     }
                                     disabled={currentPage === 1}
                                   >
-                                    <i className="bi bi-arrow-left-short" />
+                                    <BiLeftArrowAlt />
                                   </button>
                                 </li>
                                 {[...Array(totalPages)].map((_, index) => (
@@ -588,7 +589,7 @@ const ShopParts = ({ parts: propParts }) => {
                                     }
                                     disabled={currentPage === totalPages}
                                   >
-                                    <i className="bi bi-arrow-right-short" />
+                                    <BiRightArrowAlt />
                                   </button>
                                 </li>
                               </ul>

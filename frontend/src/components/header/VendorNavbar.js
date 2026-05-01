@@ -110,7 +110,7 @@ const VendorNavbar = () => {
 
   return (
     <nav className={`header-nav vendor-nav ${scrolled ? "scrolled" : ""}`}>
-      <div className="nav-container">
+      <div className="layout-shell nav-container">
         <NavLink to="/" className="nav-brand" onClick={closeMenu}>
           <span className="brand-text">
             {process.env.REACT_APP_BRAND_NAME || "AutoParts"} - Vendor Panel

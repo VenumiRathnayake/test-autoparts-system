@@ -87,7 +87,7 @@ const AdminNavbar = () => {
 
   return (
     <nav className={`header-nav admin-nav ${scrolled ? "scrolled" : ""}`}>
-      <div className="nav-container">
+      <div className="layout-shell nav-container">
         <NavLink to="/" className="nav-brand" onClick={closeMenu}>
           <span className="brand-text">
             {process.env.REACT_APP_BRAND_NAME || "AutoParts"} - Admin Panel

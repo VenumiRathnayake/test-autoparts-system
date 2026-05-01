@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BiLogoApple, BiLogoGoogle, BiStore, BiUser } from "react-icons/bi";
 import { userAPI, vendorAPI, authHelper } from "../services/api";
 import "../styles/Pages.css";
 
@@ -57,7 +58,7 @@ const Login = () => {
               type="button"
               onClick={() => handleTabChange("user")}
             >
-              <i className="bi bi-person me-2"></i>
+              <BiUser className="me-2" />
               User
             </button>
             <button
@@ -65,7 +66,7 @@ const Login = () => {
               type="button"
               onClick={() => handleTabChange("vendor")}
             >
-              <i className="bi bi-shop me-2"></i>
+              <BiStore className="me-2" />
               Vendor
             </button>
           </div>
@@ -117,10 +118,10 @@ const Login = () => {
 
           <div className="d-flex justify-content-between">
             <button type="button" className="btn btn-outline-danger me-2 w-50">
-              <i className="bi bi-google me-2"></i> Sign in with Google
+              <BiLogoGoogle className="me-2" /> Sign in with Google
             </button>
             <button type="button" className="btn btn-outline-dark ms-2 w-50">
-              <i className="bi bi-apple me-2"></i> Sign in with Apple
+              <BiLogoApple className="me-2" /> Sign in with Apple
             </button>
           </div>
 

@@ -97,7 +97,7 @@ function Footer() {
       </div>
 
       <div className="layout-shell footer-bottom">
-        <p>© 2026 AutoParts Connect. Built for faster parts discovery.</p>
+        <p>&copy; 2026 AutoParts Connect. Built for faster parts discovery.</p>
         <div className="footer-bottom-links">
           <Link to="/parts">Parts</Link>
           <Link to="/education">Guides</Link>
