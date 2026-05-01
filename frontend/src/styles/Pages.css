@@ -544,64 +544,79 @@
 /*================================================
     1. Parts Page
 =================================================*/
-.cars-page.container {
-  max-width: 1200px;
+.cars-page {
+  width: min(1240px, calc(100% - 48px));
   margin: 0 auto;
-  padding: 20px;
-  padding-top: 100px;
+  padding: 112px 0 40px;
+}
+
+.cars-page__header {
+  max-width: 640px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.cars-page__header h1 {
+  margin-bottom: 10px;
+  color: #0F172A;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.cars-page__header p {
+  margin: 0;
+  color: rgba(15, 23, 42, 0.72);
+  line-height: 1.7;
 }
 
 .search-bar {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 34px;
 }
 
 .search-bar input {
-  padding: 12px 20px;
+  padding: 14px 18px;
   width: 100%;
-  max-width: 500px;
-  border: 2px solid #e0e0e0;
-  border-radius: 30px;
+  max-width: 560px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 16px;
   font-size: 16px;
   outline: none;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 24px rgba(12, 18, 32, 0.06);
 }
 
 .search-bar input:focus {
-  border-color: #3498db;
-  box-shadow: 0 2px 10px rgba(52, 152, 219, 0.2);
+  border-color: #F59E0B;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.14);
 }
 
-.cars-grid.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -15px;
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
 }
 
 .car-card {
-  background: white;
-  border-radius: 12px;
+  background: #FFFFFF;
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 18px 40px rgba(12, 18, 32, 0.08);
   transition: all 0.3s ease;
-  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .car-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 24px 48px rgba(12, 18, 32, 0.12);
 }
 
 .car-image {
   width: 100%;
-  height: 200px;
+  height: 210px;
   overflow: hidden;
-  position: relative;
 }
 
 .car-image img {
@@ -615,59 +630,63 @@
   transform: scale(1.05);
 }
 
-.car-card h3 {
-  text-align: center;
-  margin: 20px 0 15px;
-  color: #2c3e50;
-  font-size: 20px;
+.car-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 22px;
+}
+
+.car-card__eyebrow {
+  margin-bottom: 10px;
+  color: #F59E0B;
+  font-size: 0.78rem;
   font-weight: 600;
-  padding: 0 15px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.car-card h3 {
+  margin: 0 0 8px;
+  color: #0F172A;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.car-card__meta {
+  margin: 0 0 20px;
+  color: rgba(15, 23, 42, 0.7);
+  line-height: 1.6;
 }
 
 .car-card .btn {
-  display: block;
-  margin: 0 auto 20px;
-  padding: 10px 25px;
-  background: linear-gradient(135deg, #3498db, #2980b9);
-  color: white;
-  text-decoration: none;
-  border-radius: 30px;
+  margin-top: auto;
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 14px;
   text-align: center;
-  width: 80%;
-  transition: all 0.3s ease;
-  border: none;
-  font-weight: 500;
-  box-shadow: 0 4px 6px rgba(52, 152, 219, 0.2);
 }
 
-.car-card .btn:hover {
-  background: linear-gradient(135deg, #2980b9, #3498db);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
-}
-
-.cars-grid p {
+.cars-grid__empty {
   text-align: center;
   width: 100%;
-  color: #7f8c8d;
+  color: #666f81;
   font-size: 18px;
   padding: 40px 0;
 }
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
-  .car-card {
-    margin-bottom: 25px;
-  }
-
   .car-image {
     height: 180px;
   }
 }
 
 @media (max-width: 768px) {
-  .cars-page.container {
-    padding: 15px;
+  .cars-page {
+    width: min(100% - 32px, 1240px);
+    padding-top: 100px;
   }
 
   .search-bar {
@@ -690,17 +709,16 @@
 }
 
 @media (max-width: 576px) {
-  .cars-grid.row {
-    margin: 0 -10px;
-  }
-
   .car-card {
-    margin-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 18px;
   }
 
   .car-image {
     height: 140px;
+  }
+
+  .car-card__body {
+    padding: 18px;
   }
 
   .car-card .btn {
