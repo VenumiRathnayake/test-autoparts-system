@@ -1,0 +1,42 @@
+export const cars = [
+  {
+    id: 1,
+    name: "BMW 3 Series",
+    model: "X5",
+    year: 2022,
+    fuel: "Petrol",
+    image: "/assets/images/hero-1.jpg",
+  },
+  {
+    id: 2,
+    name: "Mercedes C-Class",
+    model: "C300",
+    year: 2021,
+    fuel: "Petrol",
+    image: "/assets/images/hero-2.jpg",
+  },
+  {
+    id: 3,
+    name: "Ford Mustang",
+    model: "GT",
+    year: 2020,
+    fuel: "Petrol",
+    image: "/assets/images/hero-3.jpg",
+  },
+  {
+    id: 4,
+    name: "Toyota Corolla",
+    model: "Altis",
+    year: 2021,
+    fuel: "Diesel",
+    image: "/assets/images/hero-4.jpg",
+  },
+  {
+    id: 5,
+    name: "Honda Civic",
+    model: "RS",
+    year: 2022,
+    fuel: "Petrol",
+    image: "/assets/images/hero-1.jpg",
+  },
+];
