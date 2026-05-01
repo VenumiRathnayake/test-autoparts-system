@@ -2591,3 +2591,76 @@
     width: 100%;
   }
 }
+
+/*================================================
+    12. Brand Consistency Overrides
+=================================================*/
+.brand-text,
+.admin-nav .brand-text,
+.vendor-nav .brand-text {
+  background: linear-gradient(135deg, #F59E0B, #F59E0B 55%, #FFFFFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-link:hover,
+.nav-link.active,
+.nav-dropdown-btn:hover,
+.cart-link:hover,
+.auth-link:hover,
+.admin-nav .nav-dropdown:hover .nav-dropdown-btn,
+.vendor-nav .nav-link.active,
+.vendor-nav .nav-link:hover,
+.search-button,
+.mobile-search-button,
+.dropdown-item:hover,
+.vendor-nav .dropdown-item:hover,
+.footer-eyebrow,
+.footer-contact-item svg,
+.footer-links-group a:hover,
+.footer-contact-item a:hover,
+.footer-bottom-links a:hover,
+.footer a:hover,
+.social-icons a:hover {
+  color: #F59E0B;
+}
+
+.nav-link.active::after,
+.cart-badge,
+.mobile-login-link,
+.edu-link,
+.footer .primary-btn1,
+.footer .primary-btn2 {
+  background: #F59E0B;
+  color: #0F172A;
+}
+
+.auth-link:hover,
+.mobile-login-link:hover,
+.footer .primary-btn1:hover,
+.footer .primary-btn2:hover {
+  background: #F59E0B;
+  color: #0F172A;
+}
+
+.mobile-logout-button,
+.logout-item:hover,
+.vendor-nav .logout-button:hover {
+  background: #0F172A !important;
+  border-color: #0F172A !important;
+  color: #FFFFFF !important;
+}
+
+.footer,
+.footer .social-icons li a {
+  background-color: #0F172A;
+}
+
+.footer,
+.footer a,
+.footer .footer-brand h2,
+.footer .footer-items h2,
+.footer .footer-items h3 {
+  color: #FFFFFF;
+}

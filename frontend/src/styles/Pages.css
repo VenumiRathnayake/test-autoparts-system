@@ -2106,3 +2106,116 @@
   color: #666f81;
   margin-top: 20px;
 }
+
+/*================================================
+    15. Brand Consistency Overrides
+=================================================*/
+.home-page {
+  --home-ink: #0F172A;
+  --home-panel: #0F172A;
+  --home-panel-soft: #0F172A;
+  --home-gold: #F59E0B;
+  --home-gold-deep: #F59E0B;
+}
+
+.home-btn--primary,
+.car-card .btn,
+.contact-page .btn-primary,
+.login-page .btn-primary,
+.register-page .btn-primary,
+.checkout-button,
+.add-part-page .btn,
+.add-article-page .btn.btn-success,
+.manage-parts .update-btn,
+.manage-articles .update-btn,
+.status-actions .btn,
+.badge-warning,
+.badge-info,
+.badge-primary,
+.badge-success,
+.badge-danger,
+.badge-secondary {
+  background: #F59E0B;
+  color: #0F172A;
+  border-color: #F59E0B;
+}
+
+.home-btn--primary:hover,
+.car-card .btn:hover,
+.contact-page .btn-primary:hover,
+.login-page .btn-primary:hover,
+.register-page .btn-primary:hover,
+.checkout-button:hover,
+.add-part-page .btn:hover,
+.add-article-page .btn.btn-success:hover,
+.manage-parts .update-btn:hover,
+.manage-articles .update-btn:hover,
+.status-actions .btn:hover {
+  background: #F59E0B;
+  color: #0F172A;
+  border-color: #F59E0B;
+}
+
+.remove-btn,
+.manage-parts .delete-btn,
+.manage-articles .delete-btn,
+.contact-page .btn-outline-danger:hover,
+.login-page .btn-outline-danger:hover,
+.register-page .btn-outline-danger:hover {
+  background: #0F172A;
+  color: #FFFFFF;
+  border-color: #0F172A;
+}
+
+.remove-btn:hover,
+.manage-parts .delete-btn:hover,
+.manage-articles .delete-btn:hover {
+  background: #0F172A;
+  color: #FFFFFF;
+}
+
+.search-bar input:focus,
+.parts-details-page .parts-search-bar input:focus,
+.contact-page .form-control:focus,
+.login-page .form-control:focus,
+.register-page .form-control:focus,
+.add-part-page .add-part-form input:focus,
+.add-article-form input:focus,
+.add-article-form textarea:focus {
+  border-color: #F59E0B;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.14);
+}
+
+.contact-page .text-primary:hover,
+.login-page .text-primary:hover,
+.register-page .text-primary:hover,
+.contact-page .text-center a,
+.login-page .login-tabs .nav-link:hover,
+.login-page .login-tabs .nav-link.active {
+  color: #F59E0B !important;
+}
+
+.login-page .login-tabs .nav-link.active {
+  background: #0F172A;
+}
+
+.purchase-history-page,
+.vendor-orders-page {
+  background-color: #FFFFFF;
+}
+
+.order-card .card-header,
+.order-details-modal .modal-header,
+.vendor-order-card .card-header,
+.vendor-order-modal .modal-header {
+  background: #0F172A;
+  color: #FFFFFF;
+}
+
+.vendor-order-card .order-items-preview img:hover,
+.order-items-preview img:hover,
+.order-items-detail .border:hover,
+.vendor-items-detail .border:hover {
+  border-color: #F59E0B !important;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.12);
+}
