@@ -51,9 +51,10 @@
 .nav-container {
   width: auto;
   max-width: 1200px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
+  column-gap: 2rem;
   padding: 0;
 }
 
@@ -71,14 +72,9 @@
   background-clip: text;
 }
 
-.nav-menu {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
 .nav-links {
   display: flex;
+  justify-self: center;
   gap: 1.5rem;
 }
 
@@ -223,6 +219,7 @@
 
 .nav-actions {
   display: flex;
+  justify-self: end;
   align-items: center;
   gap: 1.2rem;
 }
@@ -554,7 +551,8 @@
 }
 
 @media (max-width: 968px) {
-  .nav-menu {
+  .nav-links,
+  .nav-actions {
     display: none;
   }
 

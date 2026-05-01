@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useNavigate, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import {
   FaShoppingCart,
   FaUser,
-  FaSearch,
-  FaCog,
   FaHistory,
 } from "react-icons/fa";
 import { useCart } from "../../context/CartContext";
@@ -16,8 +14,6 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [userEmail, setUserEmail] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
@@ -70,15 +66,6 @@ const Header = () => {
     closeMenu();
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
-      setSearchQuery("");
-      closeMenu();
-    }
-  };
-
   return (
     <nav className={`header-nav ${scrolled ? "scrolled" : ""}`}>
       <div className="layout-shell nav-container">
@@ -89,87 +76,72 @@ const Header = () => {
         </NavLink>
 
         {/* Desktop Navigation */}
-        <div className="nav-menu">
-          <div className="nav-links">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
-              }
-              end
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/parts"
-              className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
-              }
-            >
-              Parts
-            </NavLink>
-            <NavLink
-              to="/education"
-              className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
-              }
-            >
-              Educational
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                `nav-link ${isActive ? "active" : ""}`
-              }
-            >
-              Contact Us
-            </NavLink>
-          </div>
+        <div className="nav-links">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active" : ""}`
+            }
+            end
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/parts"
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active" : ""}`
+            }
+          >
+            Parts
+          </NavLink>
+          <NavLink
+            to="/education"
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active" : ""}`
+            }
+          >
+            Educational
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `nav-link ${isActive ? "active" : ""}`
+            }
+          >
+            Contact Us
+          </NavLink>
+        </div>
 
-          <div className="nav-actions">
-            <form className="search-form" onSubmit={handleSearch}>
-              <input
-                type="text"
-                placeholder="Search parts..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="search-input"
-              />
-              <button type="submit" className="search-button">
-                <FaSearch />
-              </button>
-            </form>
-
-            <NavLink to="/cart" className="cart-link">
-              <FaShoppingCart />
-              {cartItems.length > 0 && (
-                <span className="cart-badge">{cartItems.length}</span>
-              )}
-            </NavLink>
-
-            {userEmail ? (
-              <div className="user-dropdown">
-                <button className="user-button">
-                  <FaUser />
-                  <span className="user-email">{userEmail}</span>
-                </button>
-                <div className="dropdown-content">
-                  <NavLink to="/history" className="dropdown-item" onClick={closeMenu}>
-                    <FaHistory className="me-2" />
-                    <span>Purchase History</span>
-                  </NavLink>
-                  <div className="dropdown-divider"></div>
-                  <button className="dropdown-item logout-item" onClick={handleLogout}>
-                    <span>Logout</span>
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <NavLink to="/account" className="auth-link">
-                Login
-              </NavLink>
+        <div className="nav-actions">
+          <NavLink to="/cart" className="cart-link">
+            <FaShoppingCart />
+            {cartItems.length > 0 && (
+              <span className="cart-badge">{cartItems.length}</span>
             )}
-          </div>
+          </NavLink>
+
+          {userEmail ? (
+            <div className="user-dropdown">
+              <button className="user-button">
+                <FaUser />
+                <span className="user-email">{userEmail}</span>
+              </button>
+              <div className="dropdown-content">
+                <NavLink to="/history" className="dropdown-item" onClick={closeMenu}>
+                  <FaHistory className="me-2" />
+                  <span>Purchase History</span>
+                </NavLink>
+                <div className="dropdown-divider"></div>
+                <button className="dropdown-item logout-item" onClick={handleLogout}>
+                  <span>Logout</span>
+                </button>
+              </div>
+            </div>
+          ) : (
+            <NavLink to="/account" className="auth-link">
+              Login
+            </NavLink>
+          )}
         </div>
 
         {/* Mobile menu button */}
@@ -212,21 +184,6 @@ const Header = () => {
             >
               Contact Us
             </NavLink>
-          </div>
-
-          <div className="mobile-search">
-            <form className="mobile-search-form" onSubmit={handleSearch}>
-              <input
-                type="text"
-                placeholder="Search parts..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="mobile-search-input"
-              />
-              <button type="submit" className="mobile-search-button">
-                <FaSearch />
-              </button>
-            </form>
           </div>
 
           <div className="mobile-auth">
