@@ -49,12 +49,22 @@ const AddCategory = () => {
   };
 
   return (
-    <div className="admin-add-category container mt-5">
+    <div className="admin-add-category">
       <h2>Add New Category</h2>
-      {message && <div className="alert alert-info">{message}</div>}
+      {message && (
+        <div
+          className={`admin-add-category__alert ${
+            message.includes("successfully")
+              ? "admin-add-category__alert--success"
+              : "admin-add-category__alert--error"
+          }`}
+        >
+          {message}
+        </div>
+      )}
 
-      <form onSubmit={handleSubmit} className="card p-4 shadow">
-        <div className="mb-3">
+      <form onSubmit={handleSubmit} className="admin-add-category__form">
+        <div className="form-group">
           <label className="form-label">Category Name</label>
           <input
             type="text"
@@ -67,7 +77,7 @@ const AddCategory = () => {
           />
         </div>
 
-        <div className="mb-3">
+        <div className="form-group">
           <label className="form-label">Model</label>
           <input
             type="text"
@@ -80,7 +90,7 @@ const AddCategory = () => {
           />
         </div>
 
-        <div className="mb-3">
+        <div className="form-group">
           <label className="form-label">Year</label>
           <input
             type="number"
@@ -93,13 +103,13 @@ const AddCategory = () => {
           />
         </div>
 
-        <div className="mb-3">
+        <div className="form-group">
           <label className="form-label">Fuel Type</label>
           <select
             name="fuelType"
             value={car.fuelType}
             onChange={handleChange}
-            className="form-select"
+            className="form-control"
             required
           >
             <option value="">Select fuel type</option>
@@ -110,7 +120,7 @@ const AddCategory = () => {
           </select>
         </div>
 
-        <div className="mb-3">
+        <div className="form-group">
           <label className="form-label">Category Image URL</label>
           <input
             type="url"
@@ -120,7 +130,7 @@ const AddCategory = () => {
             className="form-control"
             placeholder="Enter image URL (e.g., https://example.com/image.jpg or /assets/images/hero-1.jpg)"
           />
-          <div className="form-text">
+          <div className="admin-add-category__hint">
             Enter a full URL (https://...) or a path to an image in the assets folder (e.g., /assets/images/hero-1.jpg)
           </div>
         </div>

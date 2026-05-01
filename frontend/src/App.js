@@ -77,9 +77,19 @@ function App() {
     }
   };
 
-  const isDashboardRole = userRole === "admin" || userRole === "vendor";
-  const appClassName = `App${isDashboardRole ? " dashboard-app" : ""}`;
-  const mainClassName = isDashboardRole ? "dashboard-main" : "";
+  const appClassName = `App${
+    userRole === "admin"
+      ? " admin-app"
+      : userRole === "vendor"
+        ? " vendor-app"
+        : ""
+  }`;
+  const mainClassName =
+    userRole === "admin"
+      ? "admin-main"
+      : userRole === "vendor"
+        ? "vendor-main"
+        : "";
 
   return (
     <CartProvider>
@@ -116,7 +126,7 @@ function App() {
               <Route path="/vendor/request-category" element={<RequestCategory />} />
             </Routes>
           </main>
-          {!isDashboardRole && <Footer />}
+          {userRole !== "admin" && userRole !== "vendor" && <Footer />}
         </div>
       </Router>
     </CartProvider>

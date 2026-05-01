@@ -51,9 +51,9 @@ const AdminNavbar = () => {
   };
 
   return (
-    <nav className="header-nav admin-nav dashboard-nav">
-      <div className="dashboard-nav__mobile-bar">
-        <span className="dashboard-nav__mobile-title">Admin Dashboard</span>
+    <nav className="header-nav admin-nav">
+      <div className="admin-nav__mobile-bar">
+        <span className="admin-nav__mobile-title">Admin Dashboard</span>
 
         <button
           className={`mobile-menu-button ${isMenuOpen ? "open" : ""}`}
@@ -66,11 +66,11 @@ const AdminNavbar = () => {
         </button>
       </div>
 
-      <div className={`dashboard-nav__panel ${isMenuOpen ? "open" : ""}`}>
-        <div className="dashboard-nav__brand-block">
-          <span className="dashboard-nav__title">Admin Dashboard</span>
+      <div className={`admin-nav__panel ${isMenuOpen ? "open" : ""}`}>
+        <div className="admin-nav__brand-block">
+          <span className="admin-nav__title">Admin Dashboard</span>
           <button
-            className="dashboard-nav__close"
+            className="admin-nav__close"
             onClick={closeMenu}
             aria-label="Close admin navigation"
           >
@@ -78,11 +78,11 @@ const AdminNavbar = () => {
           </button>
         </div>
 
-        <div className="dashboard-nav__links">
+        <div className="admin-nav__links">
           <NavLink
             to="/admin/add-parts"
             className={({ isActive }) =>
-              `dashboard-nav__link ${isActive ? "active" : ""}`
+              `admin-nav__link ${isActive ? "active" : ""}`
             }
             onClick={closeMenu}
           >
@@ -93,7 +93,7 @@ const AdminNavbar = () => {
           <NavLink
             to="/admin/manage-parts"
             className={({ isActive }) =>
-              `dashboard-nav__link ${isActive ? "active" : ""}`
+              `admin-nav__link ${isActive ? "active" : ""}`
             }
             onClick={closeMenu}
           >
@@ -104,7 +104,7 @@ const AdminNavbar = () => {
           <NavLink
             to="/admin/add-articles"
             className={({ isActive }) =>
-              `dashboard-nav__link ${isActive ? "active" : ""}`
+              `admin-nav__link ${isActive ? "active" : ""}`
             }
             onClick={closeMenu}
           >
@@ -115,7 +115,7 @@ const AdminNavbar = () => {
           <NavLink
             to="/admin/manage-articles"
             className={({ isActive }) =>
-              `dashboard-nav__link ${isActive ? "active" : ""}`
+              `admin-nav__link ${isActive ? "active" : ""}`
             }
             onClick={closeMenu}
           >
@@ -126,7 +126,7 @@ const AdminNavbar = () => {
           <NavLink
             to="/admin/add-categories"
             className={({ isActive }) =>
-              `dashboard-nav__link ${isActive ? "active" : ""}`
+              `admin-nav__link ${isActive ? "active" : ""}`
             }
             onClick={closeMenu}
           >
@@ -137,7 +137,7 @@ const AdminNavbar = () => {
           <NavLink
             to="/admin/manage-categories"
             className={({ isActive }) =>
-              `dashboard-nav__link ${isActive ? "active" : ""}`
+              `admin-nav__link ${isActive ? "active" : ""}`
             }
             onClick={closeMenu}
           >
@@ -148,7 +148,7 @@ const AdminNavbar = () => {
           <NavLink
             to="/admin/manage-vendors"
             className={({ isActive }) =>
-              `dashboard-nav__link ${isActive ? "active" : ""}`
+              `admin-nav__link ${isActive ? "active" : ""}`
             }
             onClick={closeMenu}
           >
@@ -159,7 +159,7 @@ const AdminNavbar = () => {
           <NavLink
             to="/admin/manage-category-requests"
             className={({ isActive }) =>
-              `dashboard-nav__link ${isActive ? "active" : ""}`
+              `admin-nav__link ${isActive ? "active" : ""}`
             }
             onClick={closeMenu}
           >
@@ -168,15 +168,15 @@ const AdminNavbar = () => {
           </NavLink>
         </div>
 
-        <div className="dashboard-nav__footer">
+        <div className="admin-nav__footer">
           {userEmail && (
-            <div className="dashboard-nav__user">
+            <div className="admin-nav__user">
               <FaUser />
               <span>{userEmail}</span>
             </div>
           )}
 
-          <button className="dashboard-nav__logout" onClick={handleLogout}>
+          <button className="admin-nav__logout" onClick={handleLogout}>
             <FaSignOutAlt />
             <span>Logout</span>
           </button>
