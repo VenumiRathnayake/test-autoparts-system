@@ -20,7 +20,7 @@ function Footer() {
             <FaPhone />
             <div>
               <a href="tel:+94770000000">+94 77 000 0000</a>
-              <a href="tel:+94771111111">+94 77 111 1111</a>
+              <a href="tel:+94771111111">+94 77 000 0000</a>
             </div>
           </div>
           <div className="footer-contact-item">

@@ -59,7 +59,7 @@
 
 .nav-brand {
   font-size: 1.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: #2c3e50;
   text-decoration: none;
 }
@@ -614,7 +614,7 @@
 
 .hero-text h1 {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: var(--spacing-md);
   color: var(--white);
   line-height: 1.2;
@@ -774,7 +774,7 @@
 
 .footer .footer-items h2 {
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.4;
   margin-bottom: 20px;
 }
@@ -2494,7 +2494,7 @@
   margin-bottom: 12px;
   color: #f7a81b;
   font-size: 0.82rem;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
