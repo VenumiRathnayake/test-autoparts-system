@@ -268,11 +268,7 @@
   background: linear-gradient(180deg, #151d32, #0c1220);
   color: #fff;
   text-align: left;
-}
-
-.process-card:nth-child(2) {
-  background: linear-gradient(180deg, #f7a81b, #d98b0d);
-  color: #0c1220;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
 }
 
 .process-card__icon {
@@ -287,10 +283,6 @@
   font-size: 1.35rem;
 }
 
-.process-card:nth-child(2) .process-card__icon {
-  background: rgba(12, 18, 32, 0.08);
-}
-
 .process-card h3 {
   margin: 0 0 10px;
   font-size: 1.28rem;
@@ -303,6 +295,17 @@
   line-height: 1.7;
   color: inherit;
   opacity: 0.9;
+}
+
+.process-card:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(180deg, #f7a81b, #d98b0d);
+  color: #0c1220;
+  box-shadow: 0 22px 46px rgba(12, 18, 32, 0.12);
+}
+
+.process-card:hover .process-card__icon {
+  background: rgba(12, 18, 32, 0.08);
 }
 
 .trust-grid {

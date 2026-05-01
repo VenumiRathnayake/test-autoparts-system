@@ -2483,9 +2483,10 @@
 
 .footer-layout {
   display: grid;
-  grid-template-columns: 1.35fr 0.8fr 0.8fr 1fr;
-  gap: 28px;
+  grid-template-columns: 1fr 1.2fr 0.9fr;
+  gap: 48px;
   padding-top: 4px;
+  align-items: start;
 }
 
 .footer-eyebrow {
@@ -2499,13 +2500,49 @@
 }
 
 .footer-brand h2,
+.footer-message h2,
 .footer h3 {
   color: #fff;
 }
 
 .footer-brand p,
-.footer-contact-panel span {
+.footer-contact-panel span,
+.footer-contact-panel a {
   color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-contact-item {
+  align-items: flex-start;
+}
+
+.footer-contact-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-contact-item--address span {
+  max-width: 220px;
+}
+
+.footer-message {
+  text-align: center;
+  align-self: center;
+}
+
+.footer-message h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.footer-message h2 span {
+  color: #F59E0B;
+}
+
+.footer-links-group--useful {
+  justify-self: end;
 }
 
 .footer-links-group ul {
@@ -2585,7 +2622,14 @@
 
 @media (max-width: 992px) {
   .footer-layout {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-message,
+  .footer-links-group--useful {
+    text-align: left;
+    justify-self: start;
   }
 }
 
