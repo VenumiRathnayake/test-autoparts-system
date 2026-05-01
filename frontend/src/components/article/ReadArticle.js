@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { articlesAPI } from "../../services/api";
 import "../../styles/Components.css";
 
@@ -20,24 +20,59 @@ const ReadArticle = () => {
     fetchArticle();
   }, [id]);
 
-  if (article === null) return <p>Loading...</p>;
-  if (!article._id) return <p>No article found.</p>;
+  if (article === null) {
+    return (
+      <div className="read-article-page">
+        <div className="read-article-card read-article-card--state">
+          <p className="read-article-status">Loading article...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!article._id) {
+    return (
+      <div className="read-article-page">
+        <div className="read-article-card read-article-card--state">
+          <p className="read-article-status">No article found.</p>
+          <Link to="/education" className="read-article-back">
+            Back to Articles
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="read-article-page">
       <div className="read-article-card">
-        <h1 className="read-article-title">{article.title}</h1>
-        <p className="read-article-intro">{article.shortDescription}</p>
+        <div className="read-article-hero">
+          <div className="read-article-copy">
+            <div className="read-article-eyebrow">Educational Article</div>
+            <h1 className="read-article-title">{article.title}</h1>
+            <p className="read-article-intro">
+              {article.shortDescription || article.description}
+            </p>
+            <div className="read-article-meta">
+              <span>{new Date(article.createdAt).toLocaleDateString()}</span>
+              <Link to="/education" className="read-article-back">
+                Back to Articles
+              </Link>
+            </div>
+          </div>
 
-        <div className="read-article-section">
           {article.image_url && (
-            <img src={article.image_url} alt={article.title} />
+            <div className="read-article-media">
+              <img src={article.image_url} alt={article.title} />
+            </div>
           )}
         </div>
 
         <div className="read-article-section">
-          <h2>Full Article</h2>
-          <div>{article.content}</div>
+          <h2>Article Details</h2>
+          <div className="read-article-content">
+            {article.content || article.description}
+          </div>
         </div>
 
         {article.videoUrl && (
@@ -52,9 +87,9 @@ const ReadArticle = () => {
           </div>
         )}
 
-        <div className="read-article-section">
-          <p style={{ color: "#999", fontSize: "14px" }}>
-            Created at: {new Date(article.createdAt).toLocaleString()}
+        <div className="read-article-footer">
+          <p>
+            Published on {new Date(article.createdAt).toLocaleString()}
           </p>
         </div>
       </div>
