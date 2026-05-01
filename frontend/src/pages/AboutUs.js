@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   FaArrowTrendUp,
   FaCarSide,
@@ -99,20 +100,51 @@ const processItems = [
   },
 ];
 
+const heroPoints = [
+  "Verified suppliers and transparent pricing",
+  "Vehicle-based search with compatible part matching",
+  "Customer, Vendor, and Admin workflows in one platform",
+];
+
 const AboutUs = () => {
   return (
     <div className="about-page">
       <section className="about-hero">
         <div className="about-shell about-hero__content">
-          <span className="about-hero__eyebrow">About AutoParts Connect</span>
-          <h1>
-            Connecting Vehicle Owners with
-            <span> Trusted Spare Parts Suppliers</span>
-          </h1>
-          <p>
-            AutoParts Connect is an online marketplace designed to simplify the
-            way vehicle owners find and compare spare parts.
-          </p>
+          <div className="about-hero__copy">
+            <span className="about-hero__eyebrow">About AutoParts Connect</span>
+            <h1>
+              Connecting Vehicle Owners with
+              <span> Trusted Spare Parts Suppliers</span>
+            </h1>
+            <p>
+              AutoParts Connect is an online marketplace designed to simplify
+              the way vehicle owners find, compare, and source spare parts from
+              reliable suppliers.
+            </p>
+
+            <div className="about-hero__actions">
+              <Link to="/parts" className="home-btn home-btn--primary">
+                Browse Parts
+              </Link>
+              <Link to="/vendor-register" className="home-btn home-btn--ghost">
+                Become a Vendor
+              </Link>
+            </div>
+          </div>
+
+          <div className="about-hero__panel">
+            <div className="about-hero__panel-label">Why It Matters</div>
+            <h2>Built to make spare parts discovery clearer and faster.</h2>
+            <ul className="about-hero__points">
+              {heroPoints.map((point) => (
+                <li key={point}>
+                  <FaCircleCheck />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 

@@ -752,9 +752,9 @@
 .about-hero {
   position: relative;
   overflow: hidden;
-  padding: 150px 0 132px;
+  padding: 132px 0 108px;
   background:
-    linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.8)),
+    linear-gradient(115deg, rgba(15, 23, 42, 0.96) 8%, rgba(15, 23, 42, 0.88) 48%, rgba(15, 23, 42, 0.76) 100%),
     url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80")
       center/cover;
 }
@@ -763,14 +763,22 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(15, 23, 42, 0.12), rgba(15, 23, 42, 0.42));
+  background:
+    radial-gradient(circle at 18% 22%, rgba(245, 158, 11, 0.16), transparent 20%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.08), rgba(15, 23, 42, 0.28));
 }
 
 .about-hero__content {
   position: relative;
   z-index: 1;
-  max-width: 860px;
-  text-align: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.72fr);
+  gap: 34px;
+  align-items: center;
+}
+
+.about-hero__copy {
+  max-width: 760px;
 }
 
 .about-hero__eyebrow {
@@ -784,8 +792,8 @@
 }
 
 .about-hero h1 {
-  margin: 0 auto 18px;
-  max-width: 760px;
+  margin: 0 0 18px;
+  max-width: 720px;
   color: #FFFFFF;
   font-size: clamp(2.4rem, 5vw, 4.6rem);
   line-height: 1.08;
@@ -796,11 +804,66 @@
 }
 
 .about-hero p {
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 620px;
+  margin: 0;
   color: rgba(255, 255, 255, 0.82);
   font-size: 1.05rem;
   line-height: 1.8;
+}
+
+.about-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.about-hero__panel {
+  padding: 28px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 28px;
+  background: rgba(15, 23, 42, 0.54);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(14px);
+}
+
+.about-hero__panel-label {
+  margin-bottom: 12px;
+  color: #F59E0B;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.about-hero__panel h2 {
+  margin: 0 0 18px;
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+.about-hero__points {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-hero__points li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.65;
+}
+
+.about-hero__points svg {
+  margin-top: 4px;
+  flex-shrink: 0;
+  color: #F59E0B;
 }
 
 .about-story,
@@ -1032,6 +1095,7 @@
 }
 
 @media (max-width: 992px) {
+  .about-hero__content,
   .about-story__grid,
   .about-offer__grid,
   .about-dual-cards,
@@ -1052,7 +1116,7 @@
   }
 
   .about-hero {
-    padding: 124px 0 96px;
+    padding: 118px 0 84px;
   }
 
   .about-story,
@@ -1060,6 +1124,10 @@
   .about-choose,
   .about-process {
     padding: 64px 0;
+  }
+
+  .about-hero__panel {
+    padding: 24px 20px;
   }
 }
 
