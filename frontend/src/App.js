@@ -77,12 +77,15 @@ function App() {
     }
   };
 
+  const appClassName = `App${userRole === "vendor" ? " vendor-app" : ""}`;
+  const mainClassName = userRole === "vendor" ? "vendor-main" : "";
+
   return (
     <CartProvider>
       <Router>
-        <div className="App">
+        <div className={appClassName}>
           {NavigationComponent()}
-          <main>
+          <main className={mainClassName}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/parts" element={<Parts />} />
@@ -112,7 +115,7 @@ function App() {
               <Route path="/vendor/request-category" element={<RequestCategory />} />
             </Routes>
           </main>
-          <Footer />
+          {userRole !== "vendor" && <Footer />}
         </div>
       </Router>
     </CartProvider>
