@@ -106,7 +106,7 @@ const Home = () => {
           <div className="home-hero__content">
             <span className="home-eyebrow">Find The Right Auto Parts</span>
             <h1>
-              Compare prices, parts, and suppliers without the usual guesswork.
+              Find the Right Auto Parts Compare Prices Instantly
             </h1>
             <p>
               Search compatible vehicle categories, browse trusted vendors, and
