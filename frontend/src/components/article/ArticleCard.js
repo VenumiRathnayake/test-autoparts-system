@@ -23,12 +23,17 @@ const ArticleCard = () => {
     <div className="edu-links">
       {articles.map((article) => (
         <div key={article._id} className="edu-card">
-          <img src={article.image_url} alt={article.title} />
-          <h3>{article.title}</h3>
-          <p>{article.shortDescription}</p>
-          <Link to={`/education/${article._id}`} className="edu-link">
-            Read Article
-          </Link>
+          <div className="edu-card__image">
+            <img src={article.image_url} alt={article.title} />
+          </div>
+          <div className="edu-card__body">
+            <div className="edu-card__eyebrow">Educational Article</div>
+            <h3>{article.title}</h3>
+            <p>{article.shortDescription || article.description}</p>
+            <Link to={`/education/${article._id}`} className="edu-link">
+              Read Article
+            </Link>
+          </div>
         </div>
       ))}
     </div>
