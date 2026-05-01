@@ -2166,7 +2166,12 @@
 .mobile-nav-link,
 .mobile-user-info,
 .mobile-user-email {
-  color: rgba(255, 255, 255, 0.78);
+  color: #fff;
+}
+
+.header-nav .nav-link,
+.header-nav .nav-link:visited {
+  color: #fff;
 }
 
 .nav-link,
