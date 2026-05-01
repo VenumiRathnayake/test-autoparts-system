@@ -13,7 +13,7 @@ import "../../styles/Components.css";
 function Footer() {
   return (
     <footer className="footer">
-      <div className="container footer-layout">
+      <div className="layout-shell footer-layout">
         <div className="footer-brand">
           <span className="footer-eyebrow">AutoParts Connect</span>
           <h2>Search smarter, compare faster, and source parts with confidence.</h2>
@@ -96,7 +96,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="container footer-bottom">
+      <div className="layout-shell footer-bottom">
         <p>© 2026 AutoParts Connect. Built for faster parts discovery.</p>
         <div className="footer-bottom-links">
           <Link to="/parts">Parts</Link>

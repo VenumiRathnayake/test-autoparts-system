@@ -293,17 +293,6 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="home-bottom-cta">
-        <div className="home-shell home-bottom-cta__inner">
-          <div>
-            <span>Ready To Search?</span>
-            <h2>Find compatible parts faster with a cleaner starting point.</h2>
-          </div>
-          <Link to="/parts" className="home-btn home-btn--primary">
-            Explore Parts
-          </Link>
-        </div>
-      </section>
     </div>
   );
 };
